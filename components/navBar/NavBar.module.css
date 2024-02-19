@@ -1,0 +1,27 @@
+.nav{
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 0;
+}
+
+.enlaces{
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.enlaces::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue; /* Cambia esto al color que desees */
+    transition: width 0.3s;
+}
+
+.enlaces:hover::after{
+    width: 100%
+}
