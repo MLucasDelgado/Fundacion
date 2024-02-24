@@ -1,8 +1,25 @@
-.nav{
-    background-color: white;
+.nav {
     display: flex;
+    justify-content: space-between;
+    padding: .6em 0;
+    align-items: center;
+    background-color: white; 
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 3rem;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
-    padding: 1em 0;
+    width: 40%;
 }
 
 .enlaces{
