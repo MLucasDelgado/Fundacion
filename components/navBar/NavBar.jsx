@@ -1,16 +1,27 @@
 import Link from 'next/link'
 import style from './NavBar.module.css'
+import Image from 'next/image'
 
 function NavBar() {
   return (
     <div>
-        <nav className={style.nav}>
-            <Link className={style.enlaces} href='#hola'>Inicio</Link>
-            <Link className={style.enlaces} href='#mision'>Objetivos</Link>
-            <Link className={style.enlaces} href='#taller'>Qué hacemos</Link>
-            <Link className={style.enlaces} href=''>Donacion</Link>
-            <Link className={style.enlaces} href=''>Contacto</Link>
-        </nav>
+      <nav className={style.nav}>
+        <div className={style.logo}>
+          <Image
+            src='/logo.png'
+            width={70}
+            height={70} />
+          <Link className={style.enlaces} style={{textAlign: 'center'}} href='#hola'>
+            Fundación <br></br><p>Familia y discapacidad</p>
+          </Link>
+        </div>
+        <div className={style.links}>
+        <Link className={style.enlaces} href='#mision'>Objetivos</Link>
+        <Link className={style.enlaces} href='#taller'>Qué hacemos</Link>
+        <Link className={style.enlaces} href=''>Donacion</Link>
+        <Link className={style.enlaces} href=''>Contacto</Link>
+        </div>
+      </nav>
     </div>
   )
 }
