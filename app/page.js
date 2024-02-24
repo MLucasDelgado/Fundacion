@@ -1,29 +1,18 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
 
   const [imagenActual, setImagenActual] = useState(0); // Índice de la imagen actual
-  const [animate, setAnimate] = useState(false); // Estado para controlar la animación
-  const imagenes = ['next.svg', 'vercel.svg']; // Array con las rutas de las imágenes
-
-  useEffect(() => {
-    // Establecer el estado para activar la animación después de un breve retraso
-    const timer = setTimeout(() => {
-      setAnimate(true);
-    }, 100); // Ajusta el tiempo según tus preferencias
-
-    // Limpiar el temporizador al desmontar el componente
-    return () => clearTimeout(timer);
-  }, []);
+  const imagenes = ['/futbol.jpg', '/baloncesto.jpg', '/taller.jpeg']; // Array con las rutas de las imágenes
 
   useEffect(() => {
     // Función para cambiar la imagen actual cada 5 segundos
     const intervalId = setInterval(() => {
       setImagenActual((prev) => (prev + 1) % imagenes.length);
-      setAnimate(true); // Activar la animación cada vez que se cambia la imagen
     }, 5000);
 
     // Limpiar el intervalo cuando el componente se desmonta
@@ -32,13 +21,38 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <section className={`${styles.seccion} ${animate ? styles.iniciarAnimacion : ''}`} id="seccionAnimada">
-        <Image
-          src='next.svg'
-          className={styles.imagen}
-          width={300}
-          height={300}
-        />
+      <div className={styles.divContenedor}>
+        <h1 className={styles.tit}>Se parte del Cambio</h1>
+        <p className={styles.parraf}>Una organización que busca la igualdad en la sociedad.</p>
+        <Link className={styles.boton} href='#inicio'>
+          <button className={styles.estilo}>Conocenos</button>
+        </Link>
+      </div>
+
+      <section className={styles.niños}>
+        <div className={styles.flexContainer}>
+          <div className={styles.centeredVertical}>
+            <Image src='/inicio.jpeg' className={styles.imagenUno} width={2000} height={2000} />
+          </div>
+          <div className={styles.fullHeight}>
+            <Image src='/inicio.jpeg' className={styles.imagenDos} width={2000} height={2000} />
+          </div>
+          <section className={styles.dosImagenes}>
+            <Image src='/inicio.jpeg' className={styles.imagenTres} width={2000} height={2000} />
+            <Image src='/inicio.jpeg' className={styles.imagenCuatro} width={2000} height={2000} />
+          </section>
+        </div>
+      </section>
+
+      <section className={styles.seccion} id='inicio' >
+        <div className={styles.imagenContenedor}>
+          <Image
+            src='/inicio.jpeg'
+            className={styles.imagen}
+            width={400}
+            height={300}
+          />
+        </div>
         <article className={styles.articulo}>
           <h2 className={styles.titulo}>Fundación</h2>
           <h4 className={styles.titulo1}>Familia y Discapacidad</h4>
@@ -50,22 +64,21 @@ export default function Home() {
       </section>
 
       {/* ---------------- SECCION DE OBJETIVOS ---------------- */}
-
       <section id='mision' className={styles.objetivos}>
         <article className={styles.informacion}>
           <div className={styles.imagenContainer}>
             <Image
-              src='next.svg'
+              src='/misio.jpg'
               className={styles.imagenes}
-              width={50}
-              height={50}
+              width={1000}
+              height={1000}
             />
           </div>
           <h3 className={styles.encabezado}>Misión</h3>
-          <p>
+          <p style={{ padding: '0 1.5rem' }}>
             Acompañar a las personas con discapacidad y a sus familias para mejorar su calidad de vida y fomentar la inclusión social de manera integral es nuestro compromiso principal.
           </p>
-          <p style={{ marginTop: '1rem' }}>
+          <p style={{ marginTop: '1rem', padding: '0 1.5rem' }}>
             Creemos firmemente en la importancia de proporcionar un apoyo continuo y personalizado que abarque no solo aspectos físicos y materiales, sino también emocionales y sociales.
           </p>
         </article>
@@ -73,17 +86,17 @@ export default function Home() {
         <article className={styles.informacion}>
           <div className={styles.imagenContainer}>
             <Image
-              src='next.svg'
+              src='/vision1.jpg'
               className={styles.imagenes}
-              width={50}
-              height={50}
+              width={1000}
+              height={1000}
             />
           </div>
           <h3 className={styles.encabezado}>Visión</h3>
-          <p>
+          <p style={{ padding: '0 1.5rem' }}>
             Ser un referente en el ambito de la inclusion. Aspiramos a que la inclusión de las personas con discapacidad en la cultura, el deporte, la salud y la educación sea un hecho natural y cotidiano en nuestra sociedad.
           </p>
-          <p style={{ marginTop: '1rem' }}>
+          <p style={{ marginTop: '1rem', padding: '0 1.5rem' }}>
             Aspiramos a que las personas con discapacidad sean ciudadanos de pleno derecho.
           </p>
         </article>
@@ -91,14 +104,14 @@ export default function Home() {
         <article className={styles.informacion}>
           <div className={styles.imagenContainer}>
             <Image
-              src='next.svg'
+              src='/valores.jpg'
               className={styles.imagenes}
-              width={50}
-              height={50}
+              width={1000}
+              height={1000}
             />
           </div>
           <h3 className={styles.encabezado}>Valores</h3>
-          <ul>
+          <ul style={{ padding: '0 1.5rem' }}>
             <li>
               Mirada integral de la persona.
             </li>
@@ -134,11 +147,11 @@ export default function Home() {
           </p>
         </article>
         <div className={styles.galeria}>
-          <Image 
+          <Image
             src={imagenes[imagenActual]}
-            width={50}
-            height={50} 
-            className={styles.muestra}/>
+            width={500}
+            height={100}
+            className={styles.muestra} />
         </div>
       </section>
     </main>
