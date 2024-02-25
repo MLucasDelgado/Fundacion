@@ -3,7 +3,7 @@
     justify-content: space-between;
     padding: .6em 0;
     align-items: center;
-    background-color: white; 
+    background-color: #087a65; 
 }
 
 .logo{
@@ -25,7 +25,7 @@
 .enlaces{
     position: relative;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .enlaces::after{
@@ -35,7 +35,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: blue; /* Cambia esto al color que desees */
+    background-color: rgb(42, 203, 224); /* Cambia esto al color que desees */
     transition: width 0.3s;
 }
 
