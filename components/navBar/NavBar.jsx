@@ -16,9 +16,10 @@ function NavBar() {
           </Link>
         </div>
         <div className={style.links}>
+        <Link className={style.enlaces} href='#inicio'>Nosotros</Link>
         <Link className={style.enlaces} href='#mision'>Objetivos</Link>
-        <Link className={style.enlaces} href='#taller'>Qué hacemos</Link>
-        <Link className={style.enlaces} href=''>Donacion</Link>
+        <Link className={style.enlaces} href='#taller'>Talleres</Link>
+        <Link className={style.enlaces} href=''>Donación</Link>
         <Link className={style.enlaces} href=''>Contacto</Link>
         </div>
       </nav>
