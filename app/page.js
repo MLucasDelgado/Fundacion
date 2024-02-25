@@ -1,23 +1,9 @@
-'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
-import { useEffect, useState } from 'react'
 
 export default function Home() {
-
-  const [imagenActual, setImagenActual] = useState(0); // Índice de la imagen actual
-  const imagenes = ['/futbol.jpg', '/baloncesto.jpg', '/taller.jpeg']; // Array con las rutas de las imágenes
-
-  useEffect(() => {
-    // Función para cambiar la imagen actual cada 5 segundos
-    const intervalId = setInterval(() => {
-      setImagenActual((prev) => (prev + 1) % imagenes.length);
-    }, 5000);
-
-    // Limpiar el intervalo cuando el componente se desmonta
-    return () => clearInterval(intervalId);
-  }, []); // Ejecutar solo una vez al montar el componente
 
   return (
     <main className={styles.main}>
@@ -25,7 +11,7 @@ export default function Home() {
         <h1 className={styles.tit}>Se parte del Cambio</h1>
         <p className={styles.parraf}>Una organización que busca la igualdad en la sociedad.</p>
         <Link className={styles.boton} href='#inicio'>
-          <button className={styles.estilo}>Conocenos</button>
+          <button className={styles.estilo}>Conócenos</button>
         </Link>
       </div>
 
@@ -64,7 +50,10 @@ export default function Home() {
       </section>
 
       {/* ---------------- SECCION DE OBJETIVOS ---------------- */}
-      <section id='mision' className={styles.objetivos}>
+      <section id='mision' className={styles.contenedorMaestro}>
+        <h3 className={styles.textoPri}>Regalando <span style={{color: 'black', fontWeight: '500'}}>sonrisas</span> a quienes más lo necesitan.</h3>
+        <p className={styles.parrafoPri}>A través de nuestros objetivos.</p>
+      <section  className={styles.objetivos}>
         <article className={styles.informacion}>
           <div className={styles.imagenContainer}>
             <Image
@@ -133,6 +122,8 @@ export default function Home() {
           </ul>
         </article>
       </section>
+      </section>
+      
 
       {/* ---------------- SECCION DE TALLERES ---------------- */}
 
@@ -142,16 +133,61 @@ export default function Home() {
           <p className={styles.info}>
             La creación de un espacio de contención, integración social, creativo y diverso es fundamental para nosotros. Buscamos no solo brindar apoyo práctico, sino también generar un ambiente en el que cada individuo se sienta valorado y parte de una comunidad inclusiva y solidaria. Este espacio será un punto de encuentro donde las personas con discapacidad puedan compartir sus experiencias, intereses y talentos, fomentando así la aceptación y el respeto mutuo.
           </p>
-          <p className={styles.info}>
-            Nuestro objetivo es seguir creciendo y expandiendo nuestras actividades y servicios para llegar a más personas y comunidades, creando un impacto positivo y duradero en la sociedad. Nos esforzamos por establecer alianzas estratégicas con otras organizaciones y entidades gubernamentales para ampliar nuestra capacidad de acción y ofrecer soluciones integrales y sostenibles a los desafíos que enfrentan las personas con discapacidad y sus familias. Juntos, podemos construir un mundo más inclusivo, equitativo y accesible para todos.
-          </p>
+
         </article>
         <div className={styles.galeria}>
-          <Image
-            src={imagenes[imagenActual]}
-            width={500}
-            height={100}
-            className={styles.muestra} />
+          <section className={styles.contenidoTaller}>
+            <article className={styles.articulo1}>
+              <Image
+                src='/danza.png'
+                className={styles.logo1}
+                width={30}
+                height={30}
+              />
+              <h3 className={styles.tituloTaller}>Danza</h3>
+              <p style={{paddingBottom: '.8rem'}}>Unirse al taller de danza es una oportunidad única para explorar el mundo del movimiento y la expresión corporal de una manera inclusiva y enriquecedora.</p>
+              <p>A través de la danza, se abre la puerta a un universo de posibilidades donde cada paso, cada gesto, se convierte en una forma de comunicación sin barreras.</p>
+            </article>
+
+            <article className={styles.articulo2}>
+              <Image
+                src='/karate.png'
+                className={styles.logo1}
+                width={30}
+                height={30}
+              />
+              <h3 className={styles.tituloTaller}>Karate</h3>
+              <p style={{paddingBottom: '.8rem'}}>En este taller, cada participante tiene la oportunidad de explorar su potencial, superar desafíos y alcanzar metas que parecían inalcanzables.</p>
+              <p> Además, el karate fomenta el compañerismo y el trabajo en equipo, creando un ambiente de apoyo mutuo donde cada individuo se fortalece a sí mismo y a los demás.</p>
+            </article>
+          </section>
+
+          <section className={styles.contenidoTaller}>
+            <article className={styles.articulo3}>
+            <Image 
+              src='/cuadro.png'
+              className={styles.logo1}
+              width={35}
+              height={35}
+              />
+              <h3 className={styles.tituloTaller}>Arte</h3>
+              <p style={{paddingBottom: '.8rem'}}>A través de la pintura, se despiertan los sentidos y se libera la imaginación, permitiendo a cada participante explorar su mundo interior y plasmarlo en lienzo.</p>
+              <p>Cada pincelada es una oportunidad para comunicar emociones, pensamientos y experiencias de una manera única y poderosa. Además, la pintura es terapéutica, brindando un espacio de calma y reflexión en medio del ajetreo diario.</p>
+            </article>
+
+            <article className={styles.articulo4}>
+            <Image 
+              src='/flechas.png'
+              className={styles.logo1}
+              width={30}
+              height={30}
+              />
+              <h3 className={styles.tituloTaller}>Recilado</h3>
+              <p style={{paddingBottom: '.8rem'}}>A través del reciclado, se transforman materiales aparentemente insignificantes en piezas únicas y funcionales, dando una nueva vida a objetos que de otro modo podrían haber sido descartados</p>
+              <p>Además, el reciclado fomenta la creatividad y el pensamiento lateral, invitando a los participantes a pensar fuera de la caja y encontrar belleza en lo que otros podrían considerar desechos.</p>
+            </article>
+          </section>
+
         </div>
       </section>
     </main>
