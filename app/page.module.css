@@ -1,40 +1,73 @@
 .main {
     background: #ffffff;
-    padding-top: 3rem;
+}
+
+.seccion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-inline: auto;
+    padding: 4rem 0;
+    background: #fdfdfd;
+}
+
+.imagen {
+    width: 100%;
+    border-radius: .3rem .3rem;
+}
+
+.imagenContenedor {
+    overflow: hidden;
+    /* Asegura que la imagen no se salga de su contenedor */
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.imagenContenedor:hover .imagen {
+    transform: scale(1.1);
+    transition: transform 0.5s ease
+}
+
+
+.articulo {
+    width: 55%;
+    padding: 0.4rem 3rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.titulo {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.titulo1 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+}
+
+.parrafo {
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
 .divContenedor {
     width: 100%;
+    margin-top: 6rem;
 }
 
 .tit {
     text-align: center;
+    font-weight: normal;
 }
 
 .parraf{
     text-align: center;
     margin-top: 1rem;
-}
-
-.boton{
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    margin-top: 1rem;
-   
-}
-
-.estilo{
-    background-color: #26ccb0; 
-    padding: .5rem 1rem;
-    font-size: 1rem;
-    border-radius: 0.5rem 0.5rem;
-}
-
-.estilo:hover{
-    cursor: pointer;
-    background-color: #2d7065; 
-    color: white;
 }
 
 .niños {
@@ -102,58 +135,6 @@
     border-radius: .5rem .5rem;
 }
 
-.seccion {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-inline: auto;
-    padding: 4rem 0;
-    background: #f8f5ee;
-    margin-top: 4rem;
-}
-
-.imagen {
-    width: 100%;
-    border-radius: 1rem 1rem;
-}
-
-.imagenContenedor {
-    overflow: hidden;
-    /* Asegura que la imagen no se salga de su contenedor */
-    display: flex;
-    justify-content: center;
-}
-
-.imagenContenedor:hover .imagen {
-    transform: scale(1.1);
-    transition: transform 0.5s ease
-}
-
-
-.articulo {
-    width: 55%;
-    padding: 0.4rem 3rem;
-    border-radius: 0 1rem 1rem 0;
-}
-
-.titulo {
-    font-size: 2rem;
-    text-align: center;
-}
-
-.titulo1 {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    letter-spacing: 3px;
-}
-
-.parrafo {
-    margin-bottom: 1rem;
-    text-align: left;
-}
 
 
 /* ------------------ APARTADO DE OBJETIVOS, VISION Y MISION ------------------ */
@@ -178,7 +159,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     margin: 0 2rem;
     margin-inline: auto;
     gap: 2rem;
@@ -187,11 +167,12 @@
 
 .informacion {
     width: 30%;
-    height: 550px;
+    padding-bottom: 3rem;
     margin: 0 2rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     margin-top: 4rem;
-    background: #f8f5ee;
+    background: #fdfdfd;
+    border-radius: 0 0 1rem .4rem;
 }
 
 .encabezado {
@@ -267,7 +248,7 @@
     padding: 1rem 2rem;
     padding-bottom: 2rem;
     box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.5);
-    background: #f8f5ee;
+    background: #89c2e7;
 }
 
 
@@ -278,7 +259,7 @@
     padding-bottom: 2rem;
     margin-top: 2rem;
     box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.5);
-    background: #f8f5ee;
+    background: #1eabd6;
 }
 
 .articulo3{
@@ -287,7 +268,7 @@
     padding: 1rem 2rem;
     padding-bottom: 2rem;
     box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.5);
-    background: #f8f5ee;
+    background: #1eabd6;
 }
 
 .articulo4{
@@ -297,7 +278,7 @@
     padding-bottom: 2rem;
     margin-top: 2rem;
     box-shadow: -1px -2px 10px 0 rgba(0, 0, 0, 0.5);
-    background: #f8f5ee;
+    background: #89c2e7;
 }
 
 .tituloTaller{
@@ -315,4 +296,39 @@
     height: 300px;
     border: 1px solid gray;
     margin-left: 5rem;
+}
+
+/* ------------------ APARTADO DE DONACIONES     ------------------ */
+
+.containerPrincipal{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7rem;
+    height: 100vh;
+    width: 90%;
+    margin-inline: auto;
+}
+
+.contenedorArticulos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.articulos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    gap: 1rem;
+    padding: 3rem 0;
+    transition: background-color .4s ease; /* Aplicar la transición al cambio de color de fondo */
+}
+
+.articulos:hover {
+    background-color: #1eabd6; /* Cambia el color de fondo al azul al pasar el mouse */
 }
