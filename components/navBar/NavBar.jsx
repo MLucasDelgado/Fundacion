@@ -4,23 +4,22 @@ import Image from 'next/image'
 
 function NavBar() {
   return (
-    <div>
+    <div className={style.contenedor}>
       <nav className={style.nav}>
         <div className={style.logo}>
           <Image
-            src='/logo.png'
-            width={70}
-            height={70} />
+            src='/logo2.png'
+            width={110}
+            height={110} />
           <Link className={style.enlaces} style={{textAlign: 'center'}} href='#hola'>
             Fundación <br></br><p>Familia y discapacidad</p>
           </Link>
         </div>
         <div className={style.links}>
-        <Link className={style.enlaces} href='#inicio'>Nosotros</Link>
+        <Link className={style.enlaces} href='#nosotros'>Nosotros</Link>
         <Link className={style.enlaces} href='#mision'>Objetivos</Link>
         <Link className={style.enlaces} href='#taller'>Talleres</Link>
-        <Link className={style.enlaces} href=''>Donación</Link>
-        <Link className={style.enlaces} href=''>Contacto</Link>
+        <Link className={style.enlaces} href='#donación'>Donación</Link>
         </div>
       </nav>
     </div>
