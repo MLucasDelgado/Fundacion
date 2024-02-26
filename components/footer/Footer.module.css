@@ -1,0 +1,27 @@
+.seccion{
+    background-color: #5adddd;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1.5rem;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+}
+
+.titulo{
+    font-weight: normal;
+    font-size: 1rem;
+}
