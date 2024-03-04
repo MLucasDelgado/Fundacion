@@ -12,6 +12,7 @@ function Footer() {
           className={styles.logo1}
           width={30}
           height={30}
+          alt='Ubicacion'
         />
         <h3>
           <a className={styles.link} href="https://www.google.com/maps/search/?api=1&query=Barrio+San+Expedito+calle+Batalla+de+Salta+y+Los+Lirios" target="_blank">Barrio San Expedito</a>
@@ -24,6 +25,7 @@ function Footer() {
           className={styles.logo1}
           width={30}
           height={30}
+          alt='Telefono'
         />
         <Link href="tel:3815152609" className={styles.link}>
           <h3 className={styles.titulo}>
@@ -39,6 +41,7 @@ function Footer() {
           className={styles.logo1}
           width={30}
           height={30}
+          alt='Mail'
         />
         <Link className={styles.link} href='mailto:fundacionfyd@gmail.com'>
           <h3 className={styles.titulo}>
