@@ -2,33 +2,232 @@
     background: #ffffff;
 }
 
-.seccion {
+.contenedorPrincipal {
+    width: 100%;
+    height: 100vh;
+    /* Ajusta la altura del contenedor principal */
+    overflow: hidden;
+    /* Para asegurar que no haya scrollbars */
+}
+
+/* --------------------- NAVBAR --------------------- */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdfdfd;
+    box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.5);
+    position: fixed;
+    /* Cambiado de sticky a fixed */
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    margin-inline: auto;
-    padding: 4rem 0;
-    background: #fdfdfd;
+    gap: 1rem;
+    margin-left: 3rem;
 }
 
-.imagen {
-    width: 100%;
-    border-radius: .3rem .3rem;
-}
-
-.imagenContenedor {
-    overflow: hidden;
-    /* Asegura que la imagen no se salga de su contenedor */
+.links {
     display: flex;
-    justify-content: center;
-    width: 30%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 40%;
 }
 
-.imagenContenedor:hover .imagen {
-    transform: scale(1.1);
-    transition: transform 0.5s ease
+.enlaces {
+    position: relative;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+
+.enlaces::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    /* Cambia esto al color que desees */
+    transition: width 0.3s;
+}
+
+.enlaces:hover::after {
+    width: 100%
+}
+
+/* --------------------- PORTADA --------------------- */
+
+.contenedorPortada {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px);
+    /* Resta el tamaño del navbar fijo */
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.contentPortada {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.portadaImagen {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tituloPortada {
+    color: white;
+    font-size: 2rem;
+}
+
+.parrafoPortada {
+    margin-top: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    width: 450px
+}
+
+.botonPortada {
+    background: linear-gradient(to right, #5e7986, #007bff);
+    /* Fondo inicial: celeste a azul */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.8s;
+    /* Transición suave */
+    position: relative;
+    margin-top: 1rem;
+
+}
+
+/* Estilo de fondo al pasar el cursor */
+.botonPortada:hover {
+    background: linear-gradient(to right, #66ccff, #007bff);
+    /* Color inicial: celeste a azul */
+    background-size: 200% 100%;
+    /* Tamaño del gradiente */
+    animation: cambioColor 1s linear infinite;
+    /* Animación de gradiente */
+}
+
+/* Definición de la animación */
+@keyframes cambioColor {
+    0% {
+        background-position: 100% 0;
+        /* Inicio de la animación: completamente a la izquierda */
+    }
+
+    100% {
+        background-position: -100% 0;
+        /* Final de la animación: completamente a la derecha */
+    }
+}
+
+/* --------------------- NOSOTROS --------------------- */
+.contenedorSomos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulosSomos {
+    font-size: 1.5rem;
+    margin-top: 8rem;
+    margin-bottom: 1rem;
+
+}
+
+.sectionNosotros {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 5px;
+}
+
+.imagenSomos {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 4px 5px 20px 0 rgba(0, 0, 0, 0.7);
+    background-color: #88dbf0;
+}
+
+.cardBody {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 2s;
+    color: aliceblue;
+}
+
+.card:hover .cardBody {
+    left: 0;
+}
+
+.titulo1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1rem 0;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.cardInfo {
+    font-size: 1rem;
+    padding: 0 1rem;
 }
 
 
@@ -43,12 +242,6 @@
     text-align: center;
 }
 
-.titulo1 {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    letter-spacing: 3px;
-}
 
 .parrafo {
     margin-bottom: 1rem;
@@ -57,7 +250,7 @@
 
 .divContenedor {
     width: 100%;
-    margin-top: 6rem;
+    margin-top: 8rem;
 }
 
 .tit {
@@ -65,7 +258,7 @@
     font-weight: normal;
 }
 
-.parraf{
+.parraf {
     text-align: center;
     margin-top: 1rem;
 }
@@ -111,25 +304,25 @@
 }
 
 /* --------------------- IMAGENES --------------------- */
-.imagenUno{
+.imagenUno {
     width: 100%;
     height: 100%;
     border-radius: .5rem .5rem;
 }
 
-.imagenDos{
+.imagenDos {
     width: 100%;
     height: 100%;
     border-radius: .5rem .5rem;
 }
 
-.imagenTres{
+.imagenTres {
     width: 100%;
     height: 200px;
     border-radius: .5rem .5rem;
 }
 
-.imagenCuatro{
+.imagenCuatro {
     width: 100%;
     height: 200px;
     border-radius: .5rem .5rem;
@@ -141,13 +334,13 @@
 .contenedorMaestro {
     display: flex;
     flex-direction: column;
-    margin-top: 6rem;
+    margin-top: 8rem;
 }
 
 .textoPri {
     text-align: center;
     font-size: 1.7rem;
-    font-weight:300
+    font-weight: 300
 }
 
 .parrafoPri {
@@ -238,11 +431,11 @@
     width: 100%;
 }
 
-.logo1{
+.logo1 {
     margin-top: 1rem;
 }
 
-.articulo1{
+.articulo1 {
     width: 40%;
     border-radius: 0 0 4rem 0;
     padding: 1rem 2rem;
@@ -252,7 +445,7 @@
 }
 
 
-.articulo2{
+.articulo2 {
     width: 40%;
     border-radius: 0 0 0 4rem;
     padding: 1rem 2rem;
@@ -262,18 +455,18 @@
     background: #1eabd6;
 }
 
-.articulo3{
+.articulo3 {
     width: 40%;
-    border-radius: 0 4rem 0 0 ;
+    border-radius: 0 4rem 0 0;
     padding: 1rem 2rem;
     padding-bottom: 2rem;
     box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.5);
     background: #1eabd6;
 }
 
-.articulo4{
+.articulo4 {
     width: 40%;
-    border-radius: 4rem 0 0 0 ;
+    border-radius: 4rem 0 0 0;
     padding: 1rem 2rem;
     padding-bottom: 2rem;
     margin-top: 2rem;
@@ -281,7 +474,7 @@
     background: #89c2e7;
 }
 
-.tituloTaller{
+.tituloTaller {
     margin: 1rem 0;
 }
 
@@ -300,7 +493,7 @@
 
 /* ------------------ APARTADO DE DONACIONES     ------------------ */
 
-.containerPrincipal{
+.containerPrincipal {
     display: flex;
     flex-direction: column;
     margin-top: 7rem;
@@ -309,16 +502,16 @@
     margin-inline: auto;
 }
 
-.contenedorArticulos{
+.contenedorArticulos {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+
     gap: 2rem;
     margin-top: 4rem;
 }
 
-.articulos{
+.articulos {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -326,9 +519,11 @@
     width: 30%;
     gap: 1rem;
     padding: 3rem 0;
-    transition: background-color .4s ease; /* Aplicar la transición al cambio de color de fondo */
+    transition: background-color .4s ease;
+    /* Aplicar la transición al cambio de color de fondo */
 }
 
 .articulos:hover {
-    background-color: #1eabd6; /* Cambia el color de fondo al azul al pasar el mouse */
+    background-color: #1eabd6;
+    /* Cambia el color de fondo al azul al pasar el mouse */
 }
