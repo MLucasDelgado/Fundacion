@@ -13,8 +13,8 @@ export default function Home() {
               <Image
                 src='/logo2.png'
                 width={70}
-                height={70} 
-                alt='logo'/>
+                height={70}
+                alt='logo' />
               <Link className={styles.enlaces} style={{ textAlign: 'center' }} href='#hola'>
                 <p>Familia y discapacidad</p>
               </Link>
@@ -49,9 +49,9 @@ export default function Home() {
 
       {/* --------------------- SECCION DE NOSOTROS --------------------- */}
 
-      <section id='nosotros'  className={styles.contenedorSomos}>
+      <section id='nosotros' className={styles.contenedorSomos}>
         <h2 className={styles.titulosSomos}>Nuestra <span style={{ fontWeight: 'normal' }}>organización</span> </h2>
-        <p style={{marginBottom: '5rem'}}>Conoce acerca de nuestros valores.</p>
+        <p style={{ marginBottom: '5rem' }}>Conoce acerca de nuestros valores.</p>
         <section className={styles.sectionNosotros}>
           <section className={styles.card}>
             <Image
@@ -62,9 +62,9 @@ export default function Home() {
               alt='imagen-somos'
             />
             <article className={styles.cardBody}>
-            <h4 className={styles.titulo1}>Familia y Discapacidad</h4>
+              <h4 className={styles.titulo1}>Familia y Discapacidad</h4>
               <p className={styles.cardInfo}>
-              Nuestro objetivo social es el mejoramiento de la calidad de vida de las personas con discapacidad, así como el fomento de la inclusión y la igualdad de oportunidades para este colectivo.
+                Nuestro objetivo social es el mejoramiento de la calidad de vida de las personas con discapacidad, así como el fomento de la inclusión y la igualdad de oportunidades para este colectivo.
               </p>
             </article>
           </section>
@@ -78,9 +78,9 @@ export default function Home() {
               alt='imagen-somos'
             />
             <article className={styles.cardBody}>
-            <h4 className={styles.titulo1}>Familia y Discapacidad</h4>
+              <h4 className={styles.titulo1}>Familia y Discapacidad</h4>
               <p className={styles.cardInfo}>
-              Para lograr nuesto objetivo, nos comprometemos a llevar a cabo una amplia variedad de iniciativas en obras de bien público y proyectos de carácter social, cultural, educativo, productivo y programas de salud.
+                Para lograr nuesto objetivo, nos comprometemos a llevar a cabo una amplia variedad de iniciativas en obras de bien público y proyectos de carácter social, cultural, educativo, productivo y programas de salud.
               </p>
             </article>
           </section>
@@ -94,9 +94,9 @@ export default function Home() {
               alt='imagen-somos'
             />
             <article className={styles.cardBody}>
-            <h4 className={styles.titulo1}>Familia y Discapacidad</h4>
+              <h4 className={styles.titulo1}>Familia y Discapacidad</h4>
               <p className={styles.cardInfo}>
-              Buscamos sensibilizar a la comunidad sobre las necesidades y desafíos que enfrentan las personas con discapacidad, promoviendo la solidaridad y la colaboración en la construcción de un mundo más inclusivo y equitativo para todos.
+                Buscamos sensibilizar a la comunidad sobre las necesidades y desafíos que enfrentan las personas con discapacidad, promoviendo la solidaridad y la colaboración en la construcción de un mundo más inclusivo y equitativo para todos.
               </p>
             </article>
           </section>
@@ -105,25 +105,28 @@ export default function Home() {
 
       {/* --------------------- IMAGENES DE NOSOTROS --------------------- */}
 
-      <div className={styles.divContenedor}>
-        <h1 className={styles.tit}>Se <span style={{ fontWeight: '700' }}>parte</span> del Cambio</h1>
-        <p className={styles.parraf}>Una organización que busca la igualdad en la sociedad.</p>
-      </div>
-
-      <section className={styles.niños}>
-        <div className={styles.flexContainer}>
-          <div className={styles.centeredVertical}>
-            <Image src='/inicio.jpeg' className={styles.imagenUno} width={2000} height={2000} alt='niños' />
-          </div>
-          <div className={styles.fullHeight}>
-            <Image src='/inicio.jpeg' className={styles.imagenDos} width={2000} height={2000} alt='niños' />
-          </div>
-          <section className={styles.dosImagenes}>
-            <Image src='/inicio.jpeg' className={styles.imagenTres} width={2000} height={2000} alt='niños' />
-            <Image src='/inicio.jpeg' className={styles.imagenCuatro} width={2000} height={2000} alt='niños' />
-          </section>
+      <section className={styles.contenedorPadre}>
+        <div className={styles.divContenedor}>
+          <h1 className={styles.tit}>Se <span style={{ fontWeight: '700' }}>parte</span> del Cambio</h1>
+          <p className={styles.parraf}>Una organización que busca la igualdad en la sociedad.</p>
         </div>
+
+        <section className={styles.niños}>
+          <div className={styles.flexContainer}>
+            <div className={styles.centeredVertical}>
+              <Image src='/inicio.jpeg' className={styles.imagenUno} width={2000} height={2000} alt='niños' />
+            </div>
+            <div className={styles.fullHeight}>
+              <Image src='/inicio.jpeg' className={styles.imagenDos} width={2000} height={2000} alt='niños' />
+            </div>
+            <section className={styles.dosImagenes}>
+              <Image src='/inicio.jpeg' className={styles.imagenTres} width={2000} height={2000} alt='niños' />
+              <Image src='/inicio.jpeg' className={styles.imagenCuatro} width={2000} height={2000} alt='niños' />
+            </section>
+          </div>
+        </section>
       </section>
+
 
 
 
